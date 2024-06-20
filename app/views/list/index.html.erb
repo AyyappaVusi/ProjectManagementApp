@@ -1,0 +1,28 @@
+
+<div class="templatemo_right_section_content">
+<%= form_with url: "/list/search", method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :keyword %>
+  <%= form.submit "Search" %>
+<% end %>
+ </div><br>
+
+<table class="table-bordered list-table">
+<tr>
+<% count=0 %>
+<% @tasks_list.each do |task|%>
+
+<% if (count % 3) == 0%>
+</tr>
+<tr>
+<% end %>
+<% count+=1 %>
+<td class="<%= cycle('even', 'odd') %>">
+<strong>Project Name: </strong><%= task.project.name %><br>
+<strong>Task : </strong><%= task.name %><br>
+<strong>Status : </strong><%= task.status %><br>
+<strong>Team Name  : </strong><%= task.project.team.name %><br>
+ </td>
+<% end %>
+</tr>
+</table>

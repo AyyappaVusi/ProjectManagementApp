@@ -1,0 +1,22 @@
+
+<table class="table table-bordered tasks-table">
+
+<tr>
+
+<td><div id="tasks">
+<% @tasks.each do |task| %>
+  <tr>
+  <td class="task-details"><%= render task %>
+  
+  <td class="edit-link"><%= link_to "Edit this task", edit_task_path(task), class:"btn btn-primary edit-link" %> </td>
+  <td class="delete-link">
+  
+<%= button_to "Destroy this task", task, method: :delete, class: "btn btn-danger" %>
+  </td>
+  </tr>
+<% end %>
+</div></td>
+
+</tr>
+</table>
+

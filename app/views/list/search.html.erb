@@ -1,0 +1,20 @@
+
+<table class="table-bordered list-table">
+<tr>
+<% count=0 %>
+<% @search_results.each do |task|%>
+
+<% if (count % 3) == 0%>
+</tr>
+<tr>
+<% end %>
+<% count+=1 %>
+<td class="<%= cycle('even', 'odd') %>">
+<strong>Project Name: </strong><%= task.project.name %><br>
+<strong>Task : </strong><%= task.name %><br>
+<strong>Status : </strong><%= task.status %><br>
+<strong>Team Name  : </strong><%= task.project.team.name %><br>
+ </td>
+<% end %>
+</tr>
+</table>

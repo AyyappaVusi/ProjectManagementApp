@@ -1,0 +1,29 @@
+<%= form_with(model: team) do |form| %>
+  <% if team.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+        <% team.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :manager_id %>
+    <%= form.collection_select :manager_id, Manager.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+

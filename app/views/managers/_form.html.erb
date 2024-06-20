@@ -1,0 +1,32 @@
+<%= form_with(model: manager) do |form| %>
+  <% if manager.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(manager.errors.count, "error") %> prohibited this manager from being saved:</h2>
+
+      <ul>
+        <% manager.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :experience %>
+    <%= form.number_field :experience, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

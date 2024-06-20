@@ -1,0 +1,29 @@
+
+<table class="table table-bordered">
+<tr><td>
+<div class="create_tab">
+<h2><%= link_to "Create New manager", new_manager_path, class: "create-link" %></h2>
+</div>
+</td></tr>
+<tr>
+
+<td><div id="managers">
+<% @managers.each do |manager| %>
+  
+  <table class="table table-bordered">
+  <tr>
+  <td><strong><u>Name: </u></strong><%= manager.name %></td>
+  <td class="edit-link"><%= link_to "View Details", manager, class:"btn btn-primary edit-link" %></td>
+  <td class="edit-link"><%= link_to "Edit this manager", edit_manager_path(manager), class:"btn btn-primary edit-link" %> </td>
+  <td>
+  
+<%= button_to "Destroy this manager", manager, method: :delete, class: "btn btn-danger" %>
+  </td>
+  </tr>
+  </table>
+<% end %>
+</div></td>
+
+</tr>
+
+</table>

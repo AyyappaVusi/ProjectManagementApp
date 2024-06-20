@@ -1,0 +1,38 @@
+
+
+
+<table class="table table-bordered">
+
+
+<tr>
+<td>
+<strong>Project Number:</strong>
+<%= project.id %>
+</td>
+<td> 
+<strong>Name:</strong>
+<%= project.name %>
+ </td>
+<td> 
+<strong>Description:</strong>
+<%= project.description %>
+ </td>
+<td> 
+<strong>Team:</strong>
+<%= project.team.name %>
+ </td>
+<td>
+<%= link_to "View Team Details", project.team %>
+</td>
+<td>
+<%= link_to "View Tasks", tasks_path(project_id: project.id) %>
+</td>
+<td>
+
+  
+    <%= link_to "Show this project", project %>
+  
+
+</td>
+</tr>
+</table>

@@ -1,0 +1,29 @@
+
+<table class="table table-bordered">
+<tr><td>
+<div class="create_tab">
+<h2><%= link_to "Create New employee", new_employee_path, class: "create-link" %></h2>
+</div>
+</td></tr>
+<tr>
+
+<td><div id="employees">
+<% @employees.each do |employee| %>
+  
+  <table class="table table-bordered">
+  <tr>
+  <td><strong><u>Name: </u></strong><%= employee.name %></td>
+  <td class="edit-link"><%= link_to "View Details", employee, class:"btn btn-primary edit-link" %></td>
+  <td class="edit-link"><%= link_to "Edit this employee", edit_employee_path(employee), class:"btn btn-primary edit-link" %> </td>
+  <td>
+  
+<%= button_to "Destroy this employee", employee, method: :delete, class: "btn btn-danger" %>
+  </td>
+  </tr>
+    <hr>
+  </table>
+<% end %>
+</div></td>
+
+</tr>
+</table>

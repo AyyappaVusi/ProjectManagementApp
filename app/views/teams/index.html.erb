@@ -1,0 +1,32 @@
+
+<table class="table table-bordered">
+
+<tr><td>
+<div class="create_tab">
+<h2><%= link_to "Create New team", new_team_path, class: "create-link" %></h2>
+</div>
+</td></tr>
+<tr>
+
+<td><div id="teams">
+<% @teams.each do |team| %>
+  
+  <table class="table table-bordered">
+  <tr>
+  <td><strong><u>Name: </u></strong><%= team.name %></td>
+  <td class="edit-link"><%= link_to "View Team Details", team, class:"btn btn-primary edit-link"  %></td>
+  <td class="edit-link"><%= link_to "Edit this team", edit_team_path(team), class:"btn btn-primary edit-link"  %> </td>
+  <td>
+  
+<%= button_to "Destroy this team", team, method: :delete, class: "btn btn-danger" %>
+  </td>
+  </tr>
+    
+    
+  </table>
+<% end %>
+</div></td>
+
+</tr>
+</table>
+

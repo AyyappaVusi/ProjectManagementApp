@@ -1,0 +1,21 @@
+
+
+<div id="<%= dom_id team %>">
+
+</div>
+<div class="show_div">
+<strong><u>Team Name:</u></strong>
+<%= team.name %>
+ <br> <br>
+<strong><u>Manager:</u></strong>
+<%= team.manager.name %>
+ <br> <br>
+<strong><u>Employees:</u></strong><br>
+  <% team.employees.each do |employee| %>
+    <%= employee.name %><br>
+    <% end %>
+  <br> 
+<% team.projects.each do |project| %>
+  <strong><u>Project Name: </u></strong><%= project.name %><br>
+  <% end %> <br>
+</div>

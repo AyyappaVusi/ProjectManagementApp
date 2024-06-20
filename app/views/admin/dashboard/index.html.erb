@@ -1,0 +1,34 @@
+<div class="dashboard">
+
+<div class="dashboard-item1"> <%= link_to projects_path do %>
+<div class="dashboard-item-logo1"><%= image_tag("/assets/project_image.avif", alt: "Project Image", height:"90%", width:"90%") %></div>
+<div class="dashboard-item-content1"><%= link_to "Projects", projects_path %>(<%= (@projects_count) %>)</div>
+<% end %>
+</div>
+
+<div class="dashboard-item2"><%= link_to tasks_path do %>
+<div class="dashboard-item-logo2"><%= image_tag("/assets/task_image.png", alt: "Task Image", height:"90%", width:"90%") %></div>
+<div class="dashboard-item-content2"><%= link_to "Tasks", tasks_path %>(<%= @tasks_count %>)</div>
+<% end %>
+</div>
+
+<div class="dashboard-item3"><%= link_to teams_path do %>
+<div class="dashboard-item-logo3"><%= image_tag("/assets/team_image.png", alt: "Team Image", height:"90%", width:"90%") %></div>
+<div class="dashboard-item-content3"><%= link_to "Teams", teams_path %>(<%= @teams_count %>)</div>
+<% end %>
+</div>
+
+<div class="dashboard-item4"><%= link_to managers_path do %>
+<div class="dashboard-item-logo4"><%= image_tag("/assets/manager_image.png", alt: "Manager Image", height:"90%", width:"90%") %></div>
+<div class="dashboard-item-content4"><%= link_to "Managers", managers_path %>(<%= @managers_count %>)</div>
+<% end %>
+</div>
+
+<div class="dashboard-item5"><%= link_to employees_path do %>
+<div class="dashboard-item-logo5"><%= image_tag("/assets/employee_image.png", alt: "Employee Image", height:"90%", width:"90%") %></div>
+<div class="dashboard-item-content5"><%= link_to "Employees", employees_path %>(<%= @employees_count %>)</div>
+<% end %>
+</div>
+
+</div>
+

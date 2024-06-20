@@ -1,0 +1,18 @@
+
+<div id="<%= dom_id manager %>">
+</div>
+
+<div class="show_div">
+<strong><u>Name:</u></strong>
+<%= manager.name %>
+<br><br>
+<strong><u>Experience in years:</u></strong>
+<%= manager.experience %>
+<br><br>
+ <strong><u>Email:</u></strong>
+    <%= manager.email %>
+ <br><br>
+<% manager.teams.each do |team| %>
+  <strong><u>Team Name: </u></strong><%= team.name %><br>
+  <% end %><br>
+ </div>

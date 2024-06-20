@@ -1,0 +1,49 @@
+<style>
+.templatemo_right_section_content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+</style>
+<p style="color: green"><%= notice %></p>
+
+<h1>Tasks for Project: <%= @project.name %></h1>
+<div class="templatemo_right_section_content">
+<table class="table-bordered list-table">
+  <thead>
+    <tr>
+      <th class="<%= cycle('even', 'odd') %>"><h4><strong>Name</strong></h4></th>
+      <th class="<%= cycle('even', 'odd') %>"><h4><strong>Status</strong></h4></th>
+      <th class="<%= cycle('even', 'odd') %>"><h4><strong>Created At</strong></h4></th>
+      <th class="<%= cycle('even', 'odd') %>"><h4><strong>Edit</strong></h4></th>
+      <th class="<%= cycle('even', 'odd') %>"><h4><strong>Delete</strong></h4></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td class="<%= cycle('even', 'odd') %>"><%= task.name %>&nbsp;&nbsp;</td>
+        <td class="<%= cycle('even', 'odd') %>"><%= task.status %>&nbsp;&nbsp;</td>
+        <td class="<%= cycle('even', 'odd') %>"><%= task.created_at %>&nbsp;&nbsp;</td>
+        <td class="<%= cycle('even', 'odd') %>"><%= link_to "Edit this task", edit_task_path(task), class:"btn btn-primary edit-link" %> </td>
+        <td class="<%= cycle('even', 'odd') %>"><%= button_to "Destroy this task", task, method: :delete, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table><br>
+
+<h2>Create a new task</h2>
+<%= form_with model: [@project, @project.tasks.new], local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :name, "Task Name" %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  
+  <div>
+    <%= form.label :status, "Status" %>
+    <%= form.select :status, ['Not Started', 'In Progress', 'Completed'] %>
+  </div><br>
+  <%= form.submit "Create Task" %>
+<% end %>
+</div>
